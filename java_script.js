@@ -14,7 +14,8 @@ number="0123456789";
 
 let initial_pass =""
 
-submit.addEventListener("click",cheakReq)
+submit.addEventListener("click",cheakReq);
+copy.addEventListener("click",do_copy);
 
 function cheakReq()
 {
@@ -35,6 +36,19 @@ function generatePass(initial_pass, l)
        
     }
     return pass;
+}
+
+function do_copy()
+{
+    if(password.value == "")
+    {
+        alert("Generate a password then copy it");
+    }
+    else{
+        password.select();
+        document.execCommand("copy");
+        alert("password has been copyed");
+    }
 }
 
 
